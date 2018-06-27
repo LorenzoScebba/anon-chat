@@ -6,6 +6,9 @@
  * Time: 15:36
  */
 
-define("PATHINIFILE", "C:\SW\cgi-bin\config.ini");
+session_start();
 
-$ini = parse_ini_file(PATHINIFILE);
+define("PATHINIFILE", "C:\\xampp\\cgi-bin\\");
+define("INIFILENAME","anonchat-config.ini");
+
+$ini = parse_ini_file(PATHINIFILE.INIFILENAME);
