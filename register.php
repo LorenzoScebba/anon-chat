@@ -7,10 +7,10 @@
 </head>
 <body>
 <?php include 'view/view_nav.php' ?>
-<main>
+<?php include 'view/view_register_form.php' ?>
 
-</main>
 <?php include 'view/view_footer.php' ?>
 
 </body>
+<?php include 'model/js.php' ?>
 </html>

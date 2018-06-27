@@ -6,10 +6,9 @@
  * Time: 16:09
  */
 
+include 'config.php';
 use Kreait\Firebase\Factory;
 use Kreait\Firebase\ServiceAccount;
-
-
 
 class FirebaseController
 {
@@ -34,7 +33,12 @@ class FirebaseController
     }
 
     public function logUserIn($email,$password){
-        return $this->auth->verifyPassword($email,$password);
+        try {
+            $user = $this->auth->verifyPassword($email, $password);
+        }catch(Exception $ex){
+            $user = null;
+        }
+        return $user;
     }
 
     public function isUserActive($uid){
@@ -48,6 +52,22 @@ class FirebaseController
 
     public function getUserLastActivityInDays($uid){
         return $this->auth->getUser($uid)->metadata->lastLoginAt->diff(new DateTime("now"))->d;
+    }
+
+    public function registerNewUser($email, $password){
+        $userProperties = [
+            'email' => $email,
+            'emailVerified' => false,
+            'password' => $password,
+            'disabled' => false,
+        ];
+        $user = $this->auth->createUser($userProperties);
+        $this->auth->sendEmailVerification($user->uid);
+        return $user;
+    }
+
+    public function sendVerificationLink($uid){
+        $this->auth->sendEmailVerification($uid);
     }
 
 }
