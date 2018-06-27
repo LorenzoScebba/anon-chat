@@ -14,5 +14,7 @@ $user = $firebase->logUserIn($_POST["email"],$_POST["password"]);
 if($user !== null){
     $_SESSION["isLoggedIn"] = true;
     $_SESSION["user"] = $user->toArray();
+}else{
+    $_SESSION["lastLoginFailed"] = true;
 }
 header("Location: " . $ini["url"] . "index.php");

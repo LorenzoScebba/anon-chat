@@ -8,7 +8,7 @@
 </head>
 <body>
 <?php include 'view/view_nav.php' ?>
-<?php include 'view/view_about.php' ?>
+<?php include 'view/view_policy.php' ?>
 
 <?php include 'view/view_footer.php' ?>
 <?php include 'model/js.php' ?>

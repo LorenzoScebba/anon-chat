@@ -32,6 +32,10 @@ class FirebaseController
         return $this->auth->listUsers();
     }
 
+    public function getUser($uid){
+        return $this->auth->getUser($uid);
+    }
+
     public function logUserIn($email,$password){
         try {
             $user = $this->auth->verifyPassword($email, $password);
@@ -46,16 +50,17 @@ class FirebaseController
         {
             return false;
         }
-        return true
+        return true;
     }
 
     public function getUserLastActivityInDays($uid){
         return $this->auth->getUser($uid)->metadata->lastLoginAt->diff(new DateTime("now"))->d;
     }
 
-    public function registerNewUser($email, $password){
+    public function registerNewUser($email, $password, $nickname){
         $userProperties = [
             'email' => $email,
+            'displayName' => $nickname,
             'emailVerified' => false,
             'password' => $password,
             'disabled' => false,
@@ -69,4 +74,7 @@ class FirebaseController
         $this->auth->sendEmailVerification($uid);
     }
 
+    public function isUserVerified($uid){
+        return $this->auth->getUser($uid)->emailVerified;
+    }
 }

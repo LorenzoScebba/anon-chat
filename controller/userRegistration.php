@@ -9,9 +9,9 @@
 include 'FirebaseController.php';
 
 $firebase = new FirebaseController();
-if(!isset($_POST["email"]) || !isset($_POST["password"])) die();
+if(!isset($_POST["email"]) || !isset($_POST["password"]) || !isset($_POST["nickname"])) die();
 
-$user = $firebase->registerNewUser($_POST["email"],$_POST["password"]);
+$user = $firebase->registerNewUser($_POST["email"],$_POST["password"],$_POST["nickname"]);
 
 $_SESSION["user"] = $user->toArray();
 $_SESSION["isLoggedIn"] = true;
