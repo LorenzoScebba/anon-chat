@@ -45,9 +45,8 @@ class FirebaseController
         if($this->auth->getUser($uid)->metadata->lastLoginAt->diff(new DateTime("now"))->d > 3)
         {
             return false;
-        }else{
-            return true;
         }
+        return true
     }
 
     public function getUserLastActivityInDays($uid){
