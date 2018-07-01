@@ -100,127 +100,6 @@
         "homepage": "https://github.com/firebase/php-jwt"
     },
     {
-        "name": "giggsey/libphonenumber-for-php",
-        "version": "8.9.8",
-        "version_normalized": "8.9.8.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/giggsey/libphonenumber-for-php.git",
-            "reference": "420621360d56499ac1b0e6293561ed8661017c6b"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/giggsey/libphonenumber-for-php/zipball/420621360d56499ac1b0e6293561ed8661017c6b",
-            "reference": "420621360d56499ac1b0e6293561ed8661017c6b",
-            "shasum": ""
-        },
-        "require": {
-            "ext-mbstring": "*",
-            "giggsey/locale": "^1.2",
-            "php": ">=5.3.2"
-        },
-        "require-dev": {
-            "pear/pear-core-minimal": "^1.9",
-            "pear/pear_exception": "^1.0",
-            "pear/versioncontrol_git": "^0.5",
-            "phing/phing": "^2.7",
-            "phpunit/phpunit": "^4.8|^5.0",
-            "satooshi/php-coveralls": "^1.0|^2.0",
-            "symfony/console": "^2.8|^3.0"
-        },
-        "time": "2018-06-14T11:25:48+00:00",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "8.x-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "libphonenumber\\": "src/"
-            },
-            "exclude-from-classmap": [
-                "/src/data/",
-                "/src/carrier/data/",
-                "/src/geocoding/data/",
-                "/src/timezone/data/"
-            ]
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "Apache-2.0"
-        ],
-        "authors": [
-            {
-                "name": "Joshua Gigg",
-                "email": "giggsey@gmail.com",
-                "homepage": "https://giggsey.com/"
-            }
-        ],
-        "description": "PHP Port of Google's libphonenumber",
-        "homepage": "https://github.com/giggsey/libphonenumber-for-php",
-        "keywords": [
-            "geocoding",
-            "geolocation",
-            "libphonenumber",
-            "mobile",
-            "phonenumber",
-            "validation"
-        ]
-    },
-    {
-        "name": "giggsey/locale",
-        "version": "1.5",
-        "version_normalized": "1.5.0.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/giggsey/Locale.git",
-            "reference": "3c9cc23c15851c54cb3ccd41a00fd4b5a89feeff"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/giggsey/Locale/zipball/3c9cc23c15851c54cb3ccd41a00fd4b5a89feeff",
-            "reference": "3c9cc23c15851c54cb3ccd41a00fd4b5a89feeff",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.2"
-        },
-        "require-dev": {
-            "pear/pear-core-minimal": "^1.9",
-            "pear/pear_exception": "^1.0",
-            "pear/versioncontrol_git": "^0.5",
-            "phing/phing": "~2.7",
-            "phpunit/phpunit": "^4.8|^5.0",
-            "satooshi/php-coveralls": "^1.0",
-            "symfony/console": "^2.8|^3.0|^4.0",
-            "symfony/filesystem": "^2.8|^3.0|^4.0",
-            "symfony/finder": "^2.8|^3.0|^4.0",
-            "symfony/process": "^2.8|^3.0|^4.0"
-        },
-        "time": "2018-04-03T15:53:12+00:00",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Giggsey\\Locale\\": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Joshua Gigg",
-                "email": "giggsey@gmail.com",
-                "homepage": "http://giggsey.com/"
-            }
-        ],
-        "description": "Locale functions required by libphonenumber-for-php"
-    },
-    {
         "name": "google/auth",
         "version": "v1.3.0",
         "version_normalized": "1.3.0.0",
@@ -270,109 +149,327 @@
         ]
     },
     {
-        "name": "google/cloud-core",
-        "version": "v1.20.5",
-        "version_normalized": "1.20.5.0",
+        "name": "google/cloud",
+        "version": "v0.69.1",
+        "version_normalized": "0.69.1.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/GoogleCloudPlatform/google-cloud-php-core.git",
-            "reference": "d0fd6f49c92737746de23ab15e226922dba35110"
+            "url": "https://github.com/GoogleCloudPlatform/google-cloud-php.git",
+            "reference": "0182e7509f2423ccf44a0476f200f9c08dcd6ba0"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/GoogleCloudPlatform/google-cloud-php-core/zipball/d0fd6f49c92737746de23ab15e226922dba35110",
-            "reference": "d0fd6f49c92737746de23ab15e226922dba35110",
+            "url": "https://api.github.com/repos/GoogleCloudPlatform/google-cloud-php/zipball/0182e7509f2423ccf44a0476f200f9c08dcd6ba0",
+            "reference": "0182e7509f2423ccf44a0476f200f9c08dcd6ba0",
             "shasum": ""
         },
         "require": {
-            "google/auth": "^1.2",
+            "google/gax": "^0.34",
             "guzzlehttp/guzzle": "^5.3|^6.0",
             "guzzlehttp/psr7": "^1.2",
             "monolog/monolog": "~1",
             "php": ">=5.5",
             "psr/http-message": "1.0.*",
+            "ramsey/uuid": "~3",
             "rize/uri-template": "~0.3"
+        },
+        "replace": {
+            "google/cloud-bigquery": "1.2.3",
+            "google/cloud-bigquerydatatransfer": "0.6.0",
+            "google/cloud-bigtable": "0.5.0",
+            "google/cloud-container": "0.5.0",
+            "google/cloud-core": "1.20.6",
+            "google/cloud-dataproc": "0.5.0",
+            "google/cloud-datastore": "1.5.4",
+            "google/cloud-debugger": "0.12.0",
+            "google/cloud-dialogflow": "0.3.0",
+            "google/cloud-dlp": "0.10.0",
+            "google/cloud-error-reporting": "0.11.0",
+            "google/cloud-firestore": "0.11.1",
+            "google/cloud-iot": "0.3.0",
+            "google/cloud-language": "0.15.0",
+            "google/cloud-logging": "1.12.2",
+            "google/cloud-monitoring": "0.11.0",
+            "google/cloud-oslogin": "0.5.0",
+            "google/cloud-pubsub": "1.3.0",
+            "google/cloud-redis": "0.3.0",
+            "google/cloud-spanner": "1.6.0",
+            "google/cloud-speech": "0.15.0",
+            "google/cloud-storage": "1.5.2",
+            "google/cloud-trace": "0.10.0",
+            "google/cloud-translate": "1.2.2",
+            "google/cloud-videointelligence": "1.0.1",
+            "google/cloud-vision": "0.14.1"
         },
         "require-dev": {
             "erusev/parsedown": "^1.6",
-            "google/gax": "^0.33",
-            "opis/closure": "^3",
+            "google/cloud-tools": "^0.6",
+            "opis/closure": "^3.0",
             "phpdocumentor/reflection": "^3.0",
+            "phpseclib/phpseclib": "^2",
             "phpunit/phpunit": "^4.8|^5.0",
-            "squizlabs/php_codesniffer": "2.*"
+            "squizlabs/php_codesniffer": "2.*",
+            "swaggest/json-schema": "^0.12.0",
+            "symfony/console": "^3.0",
+            "symfony/lock": "3.3.x-dev#1ba6ac9",
+            "vierbergenlars/php-semver": "^3.0"
         },
         "suggest": {
             "opis/closure": "May be used to serialize closures to process jobs in the batch daemon. Please require version ^3.",
-            "symfony/lock": "Required for the Spanner cached based session pool. Please require the following commit: 3.3.x-dev#1ba6ac9"
+            "phpseclib/phpseclib": "May be used in place of OpenSSL for creating signed Cloud Storage URLs. Please require version ^2."
         },
-        "time": "2018-06-12T16:51:43+00:00",
+        "time": "2018-06-27T19:44:01+00:00",
         "bin": [
-            "bin/google-cloud-batch"
+            "Core/bin/google-cloud-batch",
+            "Debugger/bin/google-cloud-debugger"
         ],
         "type": "library",
         "extra": {
             "component": {
-                "id": "cloud-core",
-                "target": "GoogleCloudPlatform/google-cloud-php-core.git",
-                "path": "Core",
-                "entry": "src/ServiceBuilder.php"
+                "id": "google-cloud",
+                "target": "GoogleCloudPlatform/google-cloud-php.git",
+                "path": "src",
+                "entry": [
+                    "Version.php",
+                    "ServiceBuilder.php"
+                ]
             }
         },
         "installation-source": "dist",
         "autoload": {
             "psr-4": {
-                "Google\\Cloud\\Core\\": "src"
+                "Google\\Cloud\\": "src",
+                "Google\\Cloud\\BigQuery\\": "BigQuery/src",
+                "Google\\Cloud\\BigQuery\\DataTransfer\\": "BigQueryDataTransfer/src",
+                "Google\\Cloud\\Bigtable\\": "Bigtable/src",
+                "Google\\Cloud\\Container\\": "Container/src",
+                "Google\\Cloud\\Core\\": "Core/src",
+                "Google\\Cloud\\Dataproc\\": "Dataproc/src",
+                "Google\\Cloud\\Datastore\\": "Datastore/src",
+                "Google\\Cloud\\Debugger\\": "Debugger/src",
+                "Google\\Cloud\\Dialogflow\\": "Dialogflow/src",
+                "Google\\Cloud\\Dlp\\": "Dlp/src",
+                "Google\\Cloud\\ErrorReporting\\": "ErrorReporting/src",
+                "Google\\Cloud\\Firestore\\": "Firestore/src",
+                "Google\\Cloud\\Iot\\": "Iot/src",
+                "Google\\Cloud\\Language\\": "Language/src",
+                "Google\\Cloud\\Logging\\": "Logging/src",
+                "Google\\Cloud\\Monitoring\\": "Monitoring/src",
+                "Google\\Cloud\\OsLogin\\": "OsLogin/src",
+                "Google\\Cloud\\PubSub\\": "PubSub/src",
+                "Google\\Cloud\\Redis\\": "Redis/src",
+                "Google\\Cloud\\Spanner\\": "Spanner/src",
+                "Google\\Cloud\\Speech\\": "Speech/src",
+                "Google\\Cloud\\Storage\\": "Storage/src",
+                "Google\\Cloud\\Trace\\": "Trace/src",
+                "Google\\Cloud\\Translate\\": "Translate/src",
+                "Google\\Cloud\\VideoIntelligence\\": "VideoIntelligence/src",
+                "Google\\Cloud\\Vision\\": "Vision/src",
+                "GPBMetadata\\Google\\Bigtable\\": "Bigtable/metadata",
+                "GPBMetadata\\Google\\Container\\": "Container/metadata",
+                "GPBMetadata\\Google\\Cloud\\Bigquery\\Datatransfer\\": "BigQueryDataTransfer/metadata",
+                "GPBMetadata\\Google\\Cloud\\Dataproc\\": "Dataproc/metadata",
+                "GPBMetadata\\Google\\Cloud\\Dialogflow\\": "Dialogflow/metadata",
+                "GPBMetadata\\Google\\Cloud\\Iot\\": "Iot/metadata",
+                "GPBMetadata\\Google\\Cloud\\Language\\": "Language/metadata",
+                "GPBMetadata\\Google\\Cloud\\Oslogin\\": "OsLogin/metadata",
+                "GPBMetadata\\Google\\Cloud\\Redis\\": "Redis/metadata",
+                "GPBMetadata\\Google\\Cloud\\Speech\\": "Speech/metadata",
+                "GPBMetadata\\Google\\Cloud\\Videointelligence\\": "VideoIntelligence/metadata",
+                "GPBMetadata\\Google\\Cloud\\Vision\\": "Vision/metadata",
+                "GPBMetadata\\Google\\Devtools\\Clouddebugger\\": "Debugger/metadata",
+                "GPBMetadata\\Google\\Devtools\\Clouderrorreporting\\": "ErrorReporting/metadata",
+                "GPBMetadata\\Google\\Devtools\\Cloudtrace\\": "Trace/metadata",
+                "GPBMetadata\\Google\\Firestore\\": "Firestore/metadata",
+                "GPBMetadata\\Google\\Logging\\": "Logging/metadata",
+                "GPBMetadata\\Google\\Monitoring\\": "Monitoring/metadata",
+                "GPBMetadata\\Google\\Privacy\\Dlp\\": "Dlp/metadata",
+                "GPBMetadata\\Google\\Pubsub\\": "PubSub/metadata",
+                "GPBMetadata\\Google\\Spanner\\": "Spanner/metadata"
             }
         },
         "notification-url": "https://packagist.org/downloads/",
         "license": [
             "Apache-2.0"
         ],
-        "description": "Google Cloud PHP shared dependency, providing functionality useful to all components."
+        "authors": [
+            {
+                "name": "John Pedrie",
+                "email": "john@pedrie.com"
+            },
+            {
+                "name": "Dave Supplee",
+                "email": "dwsupplee@gmail.com"
+            }
+        ],
+        "description": "Google Cloud Client Library",
+        "homepage": "http://github.com/GoogleCloudPlatform/google-cloud-php",
+        "keywords": [
+            "big query",
+            "bigquery",
+            "bigtable",
+            "cloud",
+            "datastore",
+            "gcs",
+            "google",
+            "google api",
+            "google api client",
+            "google apis",
+            "google apis client",
+            "google cloud",
+            "google cloud platform",
+            "language",
+            "natural language",
+            "pub sub",
+            "pubsub",
+            "spanner",
+            "speech",
+            "stackdriver logging",
+            "storage",
+            "translate",
+            "translation",
+            "vision"
+        ]
     },
     {
-        "name": "google/cloud-storage",
-        "version": "v1.3.4",
-        "version_normalized": "1.3.4.0",
+        "name": "google/gax",
+        "version": "0.34.0",
+        "version_normalized": "0.34.0.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/GoogleCloudPlatform/google-cloud-php-storage.git",
-            "reference": "240de4b1d65fad78983d80ca78bed7b1facd6467"
+            "url": "https://github.com/googleapis/gax-php.git",
+            "reference": "faddb0bd14e63b2470fd71d5a66cf6a1416c6717"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/GoogleCloudPlatform/google-cloud-php-storage/zipball/240de4b1d65fad78983d80ca78bed7b1facd6467",
-            "reference": "240de4b1d65fad78983d80ca78bed7b1facd6467",
+            "url": "https://api.github.com/repos/googleapis/gax-php/zipball/faddb0bd14e63b2470fd71d5a66cf6a1416c6717",
+            "reference": "faddb0bd14e63b2470fd71d5a66cf6a1416c6717",
             "shasum": ""
         },
         "require": {
-            "google/cloud-core": "^1.14"
+            "google/auth": "^1.2.0",
+            "google/protobuf": "^3.5.1",
+            "grpc/grpc": "^1.4",
+            "guzzlehttp/promises": "^1.3",
+            "guzzlehttp/psr7": "^1.2",
+            "php": ">=5.5"
         },
-        "suggest": {
-            "google/cloud-pubsub": "May be used to register a topic to receive bucket notifications.",
-            "phpseclib/phpseclib": "May be used in place of OpenSSL for creating signed Cloud Storage URLs. Please require version ^2."
+        "require-dev": {
+            "phpunit/phpunit": "^4.8.36",
+            "sami/sami": "*",
+            "squizlabs/php_codesniffer": "2.*"
         },
-        "time": "2018-02-01T16:15:59+00:00",
+        "time": "2018-06-08T22:24:35+00:00",
         "type": "library",
-        "extra": {
-            "component": {
-                "id": "cloud-storage",
-                "target": "GoogleCloudPlatform/google-cloud-php-storage.git",
-                "path": "src/Storage",
-                "entry": "StorageClient.php"
-            }
-        },
         "installation-source": "dist",
         "autoload": {
             "psr-4": {
-                "Google\\Cloud\\Storage\\": ""
+                "Google\\Api\\": "src/Api",
+                "Google\\ApiCore\\": "src/ApiCore",
+                "Google\\Cloud\\": "src/Cloud",
+                "Google\\Iam\\": "src/Iam",
+                "Google\\Jison\\": "src/Jison",
+                "Google\\LongRunning\\": "src/LongRunning",
+                "Google\\Rpc\\": "src/Rpc",
+                "Google\\Type\\": "src/Type",
+                "GPBMetadata\\Google\\": "metadata"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "description": "Google API Core for PHP",
+        "homepage": "https://github.com/googleapis/gax-php",
+        "keywords": [
+            "google"
+        ]
+    },
+    {
+        "name": "google/protobuf",
+        "version": "v3.6.0.1",
+        "version_normalized": "3.6.0.1",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/google/protobuf.git",
+            "reference": "ce044817c7ba0aea27c3fd8e496635d94d20a755"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/google/protobuf/zipball/ce044817c7ba0aea27c3fd8e496635d94d20a755",
+            "reference": "ce044817c7ba0aea27c3fd8e496635d94d20a755",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.5.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": ">=4.8.0"
+        },
+        "suggest": {
+            "ext-bcmath": "Need to support JSON deserialization"
+        },
+        "time": "2018-06-08T01:16:44+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Google\\Protobuf\\": "php/src/Google/Protobuf",
+                "GPBMetadata\\Google\\Protobuf\\": "php/src/GPBMetadata/Google/Protobuf"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "description": "proto library for PHP",
+        "homepage": "https://developers.google.com/protocol-buffers/",
+        "keywords": [
+            "proto"
+        ]
+    },
+    {
+        "name": "grpc/grpc",
+        "version": "1.12.0",
+        "version_normalized": "1.12.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/grpc/grpc-php.git",
+            "reference": "ad3f6a2bb47475a32a7cdf23da3f67957e0e5aab"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/grpc/grpc-php/zipball/ad3f6a2bb47475a32a7cdf23da3f67957e0e5aab",
+            "reference": "ad3f6a2bb47475a32a7cdf23da3f67957e0e5aab",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.5.0"
+        },
+        "require-dev": {
+            "google/auth": "v0.9"
+        },
+        "suggest": {
+            "ext-protobuf": "For better performance, install the protobuf C extension.",
+            "google/protobuf": "To get started using grpc quickly, install the native protobuf library."
+        },
+        "time": "2018-05-15T22:09:16+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Grpc\\": "src/lib/"
             }
         },
         "notification-url": "https://packagist.org/downloads/",
         "license": [
             "Apache-2.0"
         ],
-        "description": "Cloud Storage Client for PHP"
+        "description": "gRPC library for PHP",
+        "homepage": "https://grpc.io",
+        "keywords": [
+            "rpc"
+        ]
     },
     {
         "name": "guzzlehttp/guzzle",
@@ -563,41 +660,40 @@
     },
     {
         "name": "kreait/firebase-php",
-        "version": "4.10.1",
-        "version_normalized": "4.10.1.0",
+        "version": "4.0.2",
+        "version_normalized": "4.0.2.0",
         "source": {
             "type": "git",
             "url": "https://github.com/kreait/firebase-php.git",
-            "reference": "65cc78f0e2d56e860ba1a9a0b9a5b13783f1f7b8"
+            "reference": "aa3d3973c93525b8beb5d12ce9a3988206c24c50"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/kreait/firebase-php/zipball/65cc78f0e2d56e860ba1a9a0b9a5b13783f1f7b8",
-            "reference": "65cc78f0e2d56e860ba1a9a0b9a5b13783f1f7b8",
+            "url": "https://api.github.com/repos/kreait/firebase-php/zipball/aa3d3973c93525b8beb5d12ce9a3988206c24c50",
+            "reference": "aa3d3973c93525b8beb5d12ce9a3988206c24c50",
             "shasum": ""
         },
         "require": {
             "ext-mbstring": "*",
             "ext-openssl": "*",
-            "giggsey/libphonenumber-for-php": "^8.9",
             "google/auth": "^0.11.0|^1.0",
             "guzzlehttp/guzzle": "^6.2.1",
             "kreait/firebase-tokens": "^1.1.1",
             "lcobucci/jwt": "^3.2",
             "mtdowling/jmespath.php": "^2.3",
-            "php": "^7.0",
-            "superbalist/flysystem-google-storage": "^7.0"
+            "php": "^7.0"
         },
         "require-dev": {
             "friendsofphp/php-cs-fixer": "^2.0",
             "phpstan/phpstan-phpunit": "^0.9.2",
-            "phpunit/phpunit": "^6.0|^7.0"
+            "phpunit/phpunit": "^6.0"
         },
-        "time": "2018-06-19T10:27:44+00:00",
+        "time": "2018-02-22T18:08:42+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-master": "4.x-dev"
+                "dev-master": "4.x-dev",
+                "dev-5.0": "5.x-dev"
             }
         },
         "installation-source": "dist",
@@ -745,92 +841,6 @@
         ]
     },
     {
-        "name": "league/flysystem",
-        "version": "1.0.45",
-        "version_normalized": "1.0.45.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/thephpleague/flysystem.git",
-            "reference": "a99f94e63b512d75f851b181afcdf0ee9ebef7e6"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/a99f94e63b512d75f851b181afcdf0ee9ebef7e6",
-            "reference": "a99f94e63b512d75f851b181afcdf0ee9ebef7e6",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.5.9"
-        },
-        "conflict": {
-            "league/flysystem-sftp": "<1.0.6"
-        },
-        "require-dev": {
-            "ext-fileinfo": "*",
-            "phpspec/phpspec": "^3.4",
-            "phpunit/phpunit": "^5.7"
-        },
-        "suggest": {
-            "ext-fileinfo": "Required for MimeType",
-            "ext-ftp": "Allows you to use FTP server storage",
-            "ext-openssl": "Allows you to use FTPS server storage",
-            "league/flysystem-aws-s3-v2": "Allows you to use S3 storage with AWS SDK v2",
-            "league/flysystem-aws-s3-v3": "Allows you to use S3 storage with AWS SDK v3",
-            "league/flysystem-azure": "Allows you to use Windows Azure Blob storage",
-            "league/flysystem-cached-adapter": "Flysystem adapter decorator for metadata caching",
-            "league/flysystem-eventable-filesystem": "Allows you to use EventableFilesystem",
-            "league/flysystem-rackspace": "Allows you to use Rackspace Cloud Files",
-            "league/flysystem-sftp": "Allows you to use SFTP server storage via phpseclib",
-            "league/flysystem-webdav": "Allows you to use WebDAV storage",
-            "league/flysystem-ziparchive": "Allows you to use ZipArchive adapter",
-            "spatie/flysystem-dropbox": "Allows you to use Dropbox storage",
-            "srmklive/flysystem-dropbox-v2": "Allows you to use Dropbox storage for PHP 5 applications"
-        },
-        "time": "2018-05-07T08:44:23+00:00",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "1.1-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "League\\Flysystem\\": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Frank de Jonge",
-                "email": "info@frenky.net"
-            }
-        ],
-        "description": "Filesystem abstraction: Many filesystems, one API.",
-        "keywords": [
-            "Cloud Files",
-            "WebDAV",
-            "abstraction",
-            "aws",
-            "cloud",
-            "copy.com",
-            "dropbox",
-            "file systems",
-            "files",
-            "filesystem",
-            "filesystems",
-            "ftp",
-            "rackspace",
-            "remote",
-            "s3",
-            "sftp",
-            "storage"
-        ]
-    },
-    {
         "name": "monolog/monolog",
         "version": "1.23.0",
         "version_normalized": "1.23.0.0",
@@ -965,6 +975,57 @@
         "keywords": [
             "json",
             "jsonpath"
+        ]
+    },
+    {
+        "name": "paragonie/random_compat",
+        "version": "v2.0.15",
+        "version_normalized": "2.0.15.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/paragonie/random_compat.git",
+            "reference": "10bcb46e8f3d365170f6de9d05245aa066b81f09"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/paragonie/random_compat/zipball/10bcb46e8f3d365170f6de9d05245aa066b81f09",
+            "reference": "10bcb46e8f3d365170f6de9d05245aa066b81f09",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.2.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "4.*|5.*"
+        },
+        "suggest": {
+            "ext-libsodium": "Provides a modern crypto API that can be used to generate random bytes."
+        },
+        "time": "2018-06-08T15:26:40+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "files": [
+                "lib/random.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Paragon Initiative Enterprises",
+                "email": "security@paragonie.com",
+                "homepage": "https://paragonie.com"
+            }
+        ],
+        "description": "PHP 5.x polyfill for random_bytes() and random_int() from PHP 7",
+        "keywords": [
+            "csprng",
+            "polyfill",
+            "pseudorandom",
+            "random"
         ]
     },
     {
@@ -1167,6 +1228,88 @@
         ]
     },
     {
+        "name": "ramsey/uuid",
+        "version": "3.7.3",
+        "version_normalized": "3.7.3.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/ramsey/uuid.git",
+            "reference": "44abcdad877d9a46685a3a4d221e3b2c4b87cb76"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/ramsey/uuid/zipball/44abcdad877d9a46685a3a4d221e3b2c4b87cb76",
+            "reference": "44abcdad877d9a46685a3a4d221e3b2c4b87cb76",
+            "shasum": ""
+        },
+        "require": {
+            "paragonie/random_compat": "^1.0|^2.0",
+            "php": "^5.4 || ^7.0"
+        },
+        "replace": {
+            "rhumsaa/uuid": "self.version"
+        },
+        "require-dev": {
+            "codeception/aspect-mock": "^1.0 | ~2.0.0",
+            "doctrine/annotations": "~1.2.0",
+            "goaop/framework": "1.0.0-alpha.2 | ^1.0 | ^2.1",
+            "ircmaxell/random-lib": "^1.1",
+            "jakub-onderka/php-parallel-lint": "^0.9.0",
+            "mockery/mockery": "^0.9.9",
+            "moontoast/math": "^1.1",
+            "php-mock/php-mock-phpunit": "^0.3|^1.1",
+            "phpunit/phpunit": "^4.7|^5.0",
+            "squizlabs/php_codesniffer": "^2.3"
+        },
+        "suggest": {
+            "ext-libsodium": "Provides the PECL libsodium extension for use with the SodiumRandomGenerator",
+            "ext-uuid": "Provides the PECL UUID extension for use with the PeclUuidTimeGenerator and PeclUuidRandomGenerator",
+            "ircmaxell/random-lib": "Provides RandomLib for use with the RandomLibAdapter",
+            "moontoast/math": "Provides support for converting UUID to 128-bit integer (in string form).",
+            "ramsey/uuid-console": "A console application for generating UUIDs with ramsey/uuid",
+            "ramsey/uuid-doctrine": "Allows the use of Ramsey\\Uuid\\Uuid as Doctrine field type."
+        },
+        "time": "2018-01-20T00:28:24+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "3.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Ramsey\\Uuid\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Marijn Huizendveld",
+                "email": "marijn.huizendveld@gmail.com"
+            },
+            {
+                "name": "Thibaud Fabre",
+                "email": "thibaud@aztech.io"
+            },
+            {
+                "name": "Ben Ramsey",
+                "email": "ben@benramsey.com",
+                "homepage": "https://benramsey.com"
+            }
+        ],
+        "description": "Formerly rhumsaa/uuid. A PHP 5.4+ library for generating RFC 4122 version 1, 3, 4, and 5 universally unique identifiers (UUID).",
+        "homepage": "https://github.com/ramsey/uuid",
+        "keywords": [
+            "guid",
+            "identifier",
+            "uuid"
+        ]
+    },
+    {
         "name": "rize/uri-template",
         "version": "0.3.2",
         "version_normalized": "0.3.2.0",
@@ -1211,54 +1354,5 @@
             "template",
             "uri"
         ]
-    },
-    {
-        "name": "superbalist/flysystem-google-storage",
-        "version": "7.0.0",
-        "version_normalized": "7.0.0.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/Superbalist/flysystem-google-cloud-storage.git",
-            "reference": "be847633aaf5c9618aaf5f308a3320fe0ea394e7"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/Superbalist/flysystem-google-cloud-storage/zipball/be847633aaf5c9618aaf5f308a3320fe0ea394e7",
-            "reference": "be847633aaf5c9618aaf5f308a3320fe0ea394e7",
-            "shasum": ""
-        },
-        "require": {
-            "google/cloud-storage": ">=1.0 <1.4",
-            "league/flysystem": "~1.0",
-            "php": ">=5.5.0"
-        },
-        "require-dev": {
-            "mockery/mockery": "0.9.*",
-            "phpunit/phpunit": "~4.0"
-        },
-        "time": "2018-02-07T13:37:04+00:00",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "1.0-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Superbalist\\Flysystem\\GoogleStorage\\": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Superbalist.com a division of Takealot Online (Pty) Ltd",
-                "email": "info@superbalist.com"
-            }
-        ],
-        "description": "Flysystem adapter for Google Cloud Storage"
     }
 ]

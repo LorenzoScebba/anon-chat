@@ -8,11 +8,11 @@
         </div>
         <div class="form-group">
             <label for="password">Password</label>
-            <input name="password" type="password" class="form-control" id="password" placeholder="Password" required>
+            <input name="password" type="password" class="form-control" id="password" placeholder="Password" required pattern="(.{6,})" title="At least 6 characters">
         </div>
         <div class="form-group">
             <label for="nickname">Nickname</label>
-            <input name="nickname" type="text" class="form-control" id="nickname" aria-describedby="nicknameHelp" placeholder="Enter a nickname" autocomplete="off" required>
+            <input name="nickname" type="text" class="form-control" id="nickname" aria-describedby="nicknameHelp" placeholder="Enter a nickname" autocomplete="off" required  pattern="(.{3,})" title="At least 3 characters">
             <small id="nicknameHelp" class="form-text text-muted"><b>DON'T</b> use your real name.</small>
         </div>
         <div class="text-center mt-5"><button type="submit" class="btn btn-primary">Submit</button></div>

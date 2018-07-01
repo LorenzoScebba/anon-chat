@@ -12,3 +12,10 @@
     }
 
 </style>
+
+<style>
+    .chat-highlightable:hover{
+        color:#007bff;
+        cursor: pointer;
+    }
+</style>

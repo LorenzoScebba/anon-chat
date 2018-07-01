@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title></title>
     <?php include 'model/css.php' ?>
+    <?php include 'model/js.php' ?>
 </head>
 <body>
 <?php include 'view/view_nav.php' ?>
@@ -11,5 +12,4 @@
 <?php include 'view/view_footer.php' ?>
 
 </body>
-<?php include 'model/js.php' ?>
 </html>

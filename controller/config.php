@@ -6,7 +6,6 @@
  * Time: 15:36
  */
 
-session_start();
 
 if(file_exists('../vendor/autoload.php'))
     include '../vendor/autoload.php';
@@ -16,4 +15,7 @@ else
 define("PATHINIFILE", "C:\\xampp\\cgi-bin\\");
 define("INIFILENAME","anon-config.ini");
 
+
+
 $ini = parse_ini_file(PATHINIFILE.INIFILENAME);
+session_start();

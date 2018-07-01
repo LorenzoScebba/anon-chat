@@ -30,7 +30,7 @@
             <hr>
             <h5 class="card-title">Start now!</h5>
             <?php if (isset($_SESSION["isLoggedIn"]) && $_SESSION["isLoggedIn"] == true) { ?>
-                <p class="card-text"><a href="chat.php">Chat</a></p>
+                <p class="card-text"><a href="chat.php" class="btn-success btn ">Chat</a></p>
             <?php } else { ?>
                 <p class="card-text"><a href="register.php">Register</a> or <a href="login.php">Login</a></p>
             <?php } ?>

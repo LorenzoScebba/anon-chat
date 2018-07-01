@@ -3,7 +3,7 @@
     <form method="post" action="controller/userValidation.php">
         <div class="form-group">
             <label for="email">Email address</label>
-            <input name="email" type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" autocomplete="off" autofocus>
+            <input name="email" type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" autofocus>
             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
         </div>
         <div class="form-group">

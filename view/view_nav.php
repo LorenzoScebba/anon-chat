@@ -80,3 +80,16 @@
 
     <?php $_SESSION["lastLoginFailed"] = false;
 } ?>
+
+<?php if (isset($_SESSION["userUpdatedData"]) && $_SESSION["userUpdatedData"] == true) { ?>
+
+    <div class="alert alert-success" role="alert" id="successUpdate">
+        Data succesfully updated
+    </div>
+
+    <script>
+        $("#successUpdate").hide(2000);
+    </script>
+
+    <?php $_SESSION["userUpdatedData"] = false;
+} ?>

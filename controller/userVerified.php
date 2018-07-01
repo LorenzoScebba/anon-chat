@@ -9,4 +9,6 @@ if($firebase->isUserVerified($_GET["uid"])){
 }else{
     echo 0;
 }
-$_SESSION["user"] = $firebase->getUser($_GET["uid"])->toArray();
+
+if(isset($_SESSION["user"]))
+    $_SESSION["user"] = $firebase->getUser($_GET["uid"])->toArray();
