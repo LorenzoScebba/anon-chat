@@ -5,16 +5,16 @@ include 'checkLoggedIn.php';
 
 function sortChatbyDate($chat)
 {
-    usort($chat, function ($a, $b) {
+    usort($chat, function ($message1, $message2) {
 
-        $ad = new DateTime($a['datetime']['date']);
-        $bd = new DateTime($b['datetime']['date']);
+        $message1d = new DateTime($message1['datetime']['date']);
+        $message2d = new DateTime($message2['datetime']['date']);
 
-        if ($ad == $bd) {
+        if ($message1d == $message2d) {
             return 0;
         }
 
-        return $ad < $bd ? -1 : 1;
+        return $message1d < $message2d ? -1 : 1;
     });
     return $chat;
 }
@@ -27,5 +27,7 @@ $user = $_SESSION["user"];
 $messages = ($firebase->getChat($user["uid"], $_GET["chatid"]));
 $messages = sortChatbyDate($messages);
 
-
-echo sizeof($messages);
+if($messages != null)
+    echo sizeof($messages);
+else
+    echo 0;
