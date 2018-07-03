@@ -60,7 +60,6 @@ include 'checkLoggedIn.php'; ?>
         $.ajax({
             url: "controller/sendMessage.php",
             data: {
-                uid: "<?php echo ($user["uid"] != null ? $user["uid"] : "") ?>",
                 chatid: "<?php echo ($_GET["chatid"] != null ? $_GET["chatid"] : "") ?>",
                 content: $("#sendText").val()
             },
@@ -93,7 +92,6 @@ include 'checkLoggedIn.php'; ?>
             $.ajax({
                 url: "controller/getChatLenght.php",
                 data: {
-                    uid: "<?php echo ($user["uid"] != null ? $user["uid"] : "") ?>",
                     chatid: "<?php echo ($_GET["chatid"] != null ? $_GET["chatid"] : "") ?>",
                 },
                 success: function (result) {
