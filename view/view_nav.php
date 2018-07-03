@@ -93,3 +93,16 @@
 
     <?php $_SESSION["userUpdatedData"] = false;
 } ?>
+
+<?php if (isset($_SESSION["registerFailed"]) && $_SESSION["registerFailed"] == true) { ?>
+
+    <div class="alert alert-danger" role="alert" id="failedRegistration">
+        Registration Failed
+    </div>
+
+    <script>
+        $("#failedRegistration").hide(2000);
+    </script>
+
+    <?php $_SESSION["registerFailed"] = false;
+} ?>
