@@ -9,16 +9,18 @@
 include 'FirebaseController.php';
 include 'checkLoggedIn.php';
 
-function sortChatbyDate($chat){
-    usort($chat, function($a, $b) {
-        $ad = new DateTime($a['datetime']['date']);
-        $bd = new DateTime($b['datetime']['date']);
+function sortChatbyDate($chat)
+{
+    usort($chat, function ($message1, $message2) {
 
-        if ($ad == $bd) {
+        $message1d = new DateTime($message1['datetime']['date']);
+        $message2d = new DateTime($message2['datetime']['date']);
+
+        if ($message1d == $message2d) {
             return 0;
         }
 
-        return $ad < $bd ? -1 : 1;
+        return $message1d < $message2d ? -1 : 1;
     });
     return $chat;
 }
