@@ -36,10 +36,10 @@ include 'checkLoggedIn.php'; ?>
 
 
         foreach ($messages as $key => $message) {
-
+            $messageId = array_search($message,$messageBackup);
             ?>
 
-            <p <?php echo ($message["isSender"] == true ? "class='text-right message'" : "class='message'") ?>><?php echo $message["content"] ?> </p>
+            <p <?php echo ($message["isSender"] == true ? "class='text-right message'" : "class='message'") ?>><?php echo $message["content"] ?> <a href="#" onclick="deleteMessage('<?php echo $messageId ?>')">X</a></p>
 
         <?php } ?>
 
@@ -87,6 +87,7 @@ include 'checkLoggedIn.php'; ?>
     var isChecking = false;
 
     var checkNewMessages = setInterval(function () {
+        console.log(isChecking);
         if (!isChecking) {
             isChecking = true;
             $.ajax({
@@ -124,5 +125,9 @@ include 'checkLoggedIn.php'; ?>
             });
         }
     }, 5000);
+
+    function stopTimer(){
+        clearInterval(checkNewMessages);
+    }
 
 </script>

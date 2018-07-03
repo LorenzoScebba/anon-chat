@@ -9,7 +9,7 @@
             foreach ($chats as $chatId => $chat) {
 
                 ?>
-                <div class="card flex-row flex-wrap mb-2 chat-highlightable" onclick="displayChat('<?php echo $chatId ?>','<?php echo $uidnames[$chatId]?>')">
+                <div class="card flex-row flex-wrap mb-2 chat-highlightable" onclick="stopTimer();displayChat('<?php echo $chatId ?>','<?php echo $uidnames[$chatId]?>') ;">
                     <div class="card-header border-0">
                         <?php echo date_format(new DateTime(end($chat)["datetime"]["date"]),"Y-m-d H:i") ?>
                     </div>
