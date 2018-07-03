@@ -3,7 +3,7 @@
 include 'FirebaseController.php';
 include 'checkLoggedIn.php'; ?>
 
-<h4 class="my-4 text-center">Chat with <span id="name"><?php echo $_GET["name"] ?></span></h4>
+<h4 class="my-4 text-center">Chat with <span id="name"><?php echo ($_GET["name"] != null ? $_GET["name"] : "<s>Error fetching name</s>") ?></span></h4>
 <div class="card">
     <div class="card-body" id="cardbody">
 
@@ -11,16 +11,16 @@ include 'checkLoggedIn.php'; ?>
 
         function sortChatbyDate($chat)
         {
-            usort($chat, function ($a, $b) {
+            usort($chat, function ($message1, $message2) {
 
-                $ad = new DateTime($a['datetime']['date']);
-                $bd = new DateTime($b['datetime']['date']);
+                $message1d = new DateTime($message1['datetime']['date']);
+                $message2d = new DateTime($message2['datetime']['date']);
 
-                if ($ad == $bd) {
+                if ($message1d == $message2d) {
                     return 0;
                 }
 
-                return $ad < $bd ? -1 : 1;
+                return $message1d < $message2d ? -1 : 1;
             });
             return $chat;
         }
@@ -39,7 +39,7 @@ include 'checkLoggedIn.php'; ?>
             $messageId = array_search($message,$messageBackup);
             ?>
 
-            <p <?php echo ($message["isSender"] == true ? "class='text-right message'" : "class='message'") ?>><?php echo $message["content"] ?> <a href="#" onclick="deleteMessage('<?php echo $messageId ?>')">X</a></p>
+            <p <?php echo ($message["isSender"] == true ? "class='text-right message'" : "class='message'") ?>><?php echo ($message["content"] != null ? $message["content"] : "Error fetching content") ?> <a href="#" onclick="deleteMessage('<?php echo $messageId ?>')">X</a></p>
 
         <?php } ?>
 
@@ -60,8 +60,8 @@ include 'checkLoggedIn.php'; ?>
         $.ajax({
             url: "controller/sendMessage.php",
             data: {
-                uid: "<?php echo $user["uid"] ?>",
-                chatid: "<?php echo $_GET["chatid"] ?>",
+                uid: "<?php echo ($user["uid"] != null ? $user["uid"] : "") ?>",
+                chatid: "<?php echo ($_GET["chatid"] != null ? $_GET["chatid"] : "") ?>",
                 content: $("#sendText").val()
             },
             beforeSend: function () {
@@ -93,8 +93,8 @@ include 'checkLoggedIn.php'; ?>
             $.ajax({
                 url: "controller/getChatLenght.php",
                 data: {
-                    uid: "<?php echo $user["uid"] ?>",
-                    chatid: "<?php echo $_GET["chatid"] ?>"
+                    uid: "<?php echo ($user["uid"] != null ? $user["uid"] : "") ?>",
+                    chatid: "<?php echo ($_GET["chatid"] != null ? $_GET["chatid"] : "") ?>",
                 },
                 success: function (result) {
                     if (parseInt(result) !== parseInt($("p.message").length) && !isRefreshing && parseInt($("p.message").length) > 0) {
