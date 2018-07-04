@@ -9,31 +9,22 @@
 include 'FirebaseController.php';
 include 'checkLoggedIn.php';
 
-function sortChatbyDate($chat)
-{
-    usort($chat, function ($message1, $message2) {
-
-        $message1d = new DateTime($message1['datetime']['date']);
-        $message2d = new DateTime($message2['datetime']['date']);
-
-        if ($message1d == $message2d) {
-            return 0;
-        }
-
-        return $message1d < $message2d ? -1 : 1;
-    });
-    return $chat;
-}
-
 $firebase = new FirebaseController();
-if(!isset($_SESSION["user"])) die();
+if (!isset($_SESSION["user"])) die();
 $user = $_SESSION["user"];
 
 $chats = $firebase->getChats($user["uid"]);
 $uidnames = array();
 
-foreach($chats as $uid => $value){
-    $uidnames[$uid] =  $firebase->getUser($uid)->displayName;
+if($chats!=null) {
+    foreach ($chats as $uid => $value) {
+        $uidnames[$uid] = $firebase->getUser($uid)->displayName;
+    }
+    uasort($chats,function ($a,$b){
+        $v1 = strtotime(end($a)['datetime']['date']);
+        $v2 = strtotime(end($b)['datetime']['date']);
+        return $v2 - $v1;
+    });
 }
 
 ?>

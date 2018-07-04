@@ -7,6 +7,7 @@
  */
 
 include 'FirebaseController.php';
+include 'checkLoggedIn.php';
 
 $firebase = new FirebaseController();
 $firebase->sendVerificationLink($_GET["uid"]);

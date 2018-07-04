@@ -120,19 +120,51 @@ class FirebaseController
 
     public function addMessage($uid,$with,$isSender,$content)
     {
-        $this->database->getReference('messages/' . "$uid/$with/" . uniqid())
+        $messageId = uniqid();
+
+        $this->database->getReference('messages/' . "$uid/$with/" . $messageId)
             ->set([
                 'datetime' => new DateTime("now"),
                 'content' => $content,
                 'isSender' => $isSender
             ]);
 
-        $this->database->getReference('messages/' . "$with/$uid/" . uniqid())
+        $this->database->getReference('messages/' . "$with/$uid/" . $messageId)
             ->set([
                 'datetime' => new DateTime("now"),
                 'content' => $content,
                 'isSender' => !$isSender
             ]);
+    }
+
+    public function startRandomChat($uid){
+        $users = ($this->auth->listUsers());
+        $uids = array();
+
+        foreach($users as $user){
+            array_push($uids,$user->uid);
+        }
+        shuffle($uids);
+
+        $hasChat = $this->database->getReference("messages/$uid/")
+            ->getSnapshot()
+            ->getValue();
+
+        foreach($uids as $uidRecord){
+            if(!array_key_exists($uidRecord,$hasChat) && $uidRecord != $uid){
+                $this->addMessage($uid,$uidRecord,true,"Hi, i want to start a chat with you!");
+                break;
+            }
+        }
+    }
+
+    public function deleteMessage($uid, $with, $idMessage){
+        $this->database->getReference('messages/' . "$uid/$with/" . $idMessage)
+            ->remove();
+
+        $this->database->getReference('messages/' . "$with/$uid/" . $idMessage)
+            ->remove();
+
     }
 }
 

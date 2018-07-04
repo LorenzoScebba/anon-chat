@@ -7,6 +7,7 @@
  */
 
 include 'FirebaseController.php';
+include 'checkLoggedIn.php';
 
 $firebase = new FirebaseController();
 if(!isset($_POST["password"]) || !isset($_POST["nickname"])) die();
