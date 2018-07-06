@@ -86,7 +86,7 @@
 
     <script>
         $(document).ready(function () {
-            $("#successUpdate").hide(3000);
+            $("#successUpdate").delay(2000).hide(500);
         });
     </script>
 
@@ -101,7 +101,7 @@
 
     <script>
         $(document).ready(function () {
-            $("#failedRegistration").hide(3000);
+            $("#failedRegistration").delay(2000).hide(500);
         });
     </script>
 
