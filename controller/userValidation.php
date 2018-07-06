@@ -9,15 +9,27 @@
 include 'FirebaseController.php';
 
 $firebase = new FirebaseController();
-if(!isset($_POST["email"]) || !isset($_POST["password"])) {$_SESSION["lastLoginFailed"] = true;header("Location: " . $ini["url"] . "index.php");die();}
-if($_POST["email"] == null || $_POST["password"] == null) {$_SESSION["lastLoginFailed"] = true;header("Location: " . $ini["url"] . "index.php");die();}
-if($_POST["email"] == "" || $_POST["password"] == "") {$_SESSION["lastLoginFailed"] = true;header("Location: " . $ini["url"] . "index.php");die();}
+if (!isset($_POST["email"]) || !isset($_POST["password"])) {
+    $_SESSION["lastLoginFailed"] = true;
+    header("Location: " . $ini["url"] . "index.php");
+    die();
+}
+if ($_POST["email"] == null || $_POST["password"] == null) {
+    $_SESSION["lastLoginFailed"] = true;
+    header("Location: " . $ini["url"] . "index.php");
+    die();
+}
+if ($_POST["email"] == "" || $_POST["password"] == "") {
+    $_SESSION["lastLoginFailed"] = true;
+    header("Location: " . $ini["url"] . "index.php");
+    die();
+}
 
-$user = $firebase->logUserIn($_POST["email"],$_POST["password"]);
-if($user !== null){
+$user = $firebase->logUserIn($_POST["email"], $_POST["password"]);
+if ($user !== null) {
     $_SESSION["isLoggedIn"] = true;
     $_SESSION["user"] = $user->toArray();
-}else{
+} else {
     $_SESSION["lastLoginFailed"] = true;
 }
 header("Location: " . $ini["url"] . "index.php");

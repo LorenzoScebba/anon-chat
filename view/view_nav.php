@@ -31,7 +31,7 @@
 
     <?php if ($user["emailVerified"] == 0) { ?>
 
-        <div class="alert alert-danger" role="alert">
+        <div class="alert alert-danger" role="alert" id="emailVerified">
             Email not verified, click <a onclick="sendVerification()" href="#">here</a> for a verification link
         </div>
 
@@ -41,9 +41,6 @@
                     url: "controller/sendVerificationLink.php",
                     data: {
                         uid: "<?php echo $user["uid"]; ?>"
-                    },
-                    success: function (result) {
-                        $(".alert").hide(500);
                     }
                 });
             }
@@ -60,7 +57,7 @@
                         if (result === "1") {
                             console.log("Clear")
                             $("#welcomebackStatus").text(" - Verified")
-                            $(".alert").hide(500);
+                            $("#emailVerified").hide(500);
                             clearInterval(id);
                         }
                     }
@@ -88,7 +85,9 @@
     </div>
 
     <script>
-        $("#successUpdate").hide(2000);
+        $(document).ready(function () {
+            $("#successUpdate").hide(3000);
+        });
     </script>
 
     <?php $_SESSION["userUpdatedData"] = false;
@@ -101,7 +100,9 @@
     </div>
 
     <script>
-        $("#failedRegistration").hide(2000);
+        $(document).ready(function () {
+            $("#failedRegistration").hide(3000);
+        });
     </script>
 
     <?php $_SESSION["registerFailed"] = false;

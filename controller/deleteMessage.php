@@ -18,4 +18,4 @@ $with = $_GET["with"];
 $messageId = $_GET["messageId"];
 $user = $_SESSION["user"];
 
-$firebase->deleteMessage($user["uid"],$with,$messageId);
+$firebase->deleteMessage($user["uid"], $with, $messageId);

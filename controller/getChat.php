@@ -16,7 +16,7 @@ include 'checkLoggedIn.php'; ?>
         $user = $_SESSION["user"];
 
         $messages = ($firebase->getChat($user["uid"], $_GET["chatid"]));
-        if($messages!=null){
+        if ($messages != null) {
             uasort($messages, function ($message1, $message2) {
 
                 $message1d = new DateTime($message1['datetime']['date']);
@@ -28,7 +28,7 @@ include 'checkLoggedIn.php'; ?>
 
                 return $message1d < $message2d ? -1 : 1;
             });
-        }else{
+        } else {
             echo "<script>location.reload()</script>";
             exit;
         }
@@ -45,7 +45,8 @@ include 'checkLoggedIn.php'; ?>
     </div>
 
     <div class="row">
-        <div class="col-9 my-2 mx-2"><input type="text" class="form-control" id="sendText" onkeydown="handleKeyPress(event)" required></div>
+        <div class="col-9 my-2 mx-2"><input type="text" class="form-control" id="sendText"
+                                            onkeydown="handleKeyPress(event)" required></div>
         <div class="col-2 my-2 mx-2">
             <button id="sendButton" class="btn btn-success" style="width: 100%;" onclick="sendMessage()">Send</button>
         </div>
@@ -68,7 +69,7 @@ include 'checkLoggedIn.php'; ?>
             beforeSend: function () {
                 console.log($("#" + messageId).text());
                 $("#" + messageId).remove();
-                if(parseInt($("p.message").length) === 0){
+                if (parseInt($("p.message").length) === 0) {
                     location.reload();
                 }
             },
@@ -78,8 +79,8 @@ include 'checkLoggedIn.php'; ?>
         });
     }
 
-    function handleKeyPress(event){
-        if(event.keyCode === 13){
+    function handleKeyPress(event) {
+        if (event.keyCode === 13) {
             sendMessage();
         }
     }
@@ -95,7 +96,7 @@ include 'checkLoggedIn.php'; ?>
                 $("#sendButton").prop('disabled', true);
             },
             success: function (result) {
-                $("#cardbody").append("<p class=\"text-right\">" + $("#sendText").val() + "</p>");
+                $("#cardbody").append("<p class=\"text-right\">" + $("#sendText").val() + "<a href='#' onclick='alert('Not ready yet')'>X</a>" + "</p>");
                 $("#sendText").val("");
             },
             error: function (result) {
@@ -135,7 +136,7 @@ include 'checkLoggedIn.php'; ?>
                                 isRefreshing = false;
                             },
                         });
-                    }else{
+                    } else {
                         location.reload();
                     }
                 },

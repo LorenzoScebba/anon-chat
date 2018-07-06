@@ -6,7 +6,7 @@
         <div class="col-4">
             <h4 class="my-4 text-center">Contacts</h4>
             <?php
-            if($chats!=null) {
+            if ($chats != null) {
                 foreach ($chats as $chatId => $chat) {
 
                     ?>
@@ -21,12 +21,13 @@
                     </div>
                     <?php
                 }
-            }else{
+            } else {
                 echo "<p class='text-center'>No chats present, start a random chat with someone!</p>";
             }
             ?>
             <div class="my-5 text-center">
-                <button id="startChat" class="btn btn-primary" onclick="startRandomChat();">Start a random chat!</button>
+                <button id="startChat" class="btn btn-primary" onclick="startRandomChat();">Start a random chat!
+                </button>
             </div>
         </div>
         <div class="col-8" id="chat">
@@ -43,12 +44,12 @@
     function startRandomChat() {
         $.ajax({
             url: "controller/startRandomChat.php",
-            beforeSend : function () {
+            beforeSend: function () {
                 $("#startChat")
-                    .prop("disabled",true)
+                    .prop("disabled", true)
                     .text("Starting a random chat...");
             },
-            success: function( result ) {
+            success: function (result) {
                 location.reload()
             },
             error: function (result) {
@@ -57,19 +58,19 @@
         });
     }
 
-    function displayChat(chatid,name){
-        if($("#name").text() !== name && !displayChatInProgress){
+    function displayChat(chatid, name) {
+        if ($("#name").text() !== name && !displayChatInProgress) {
             displayChatInProgress = true;
             $.ajax({
                 url: "controller/getChat.php",
                 data: {
                     chatid: chatid,
-                    name:name,
+                    name: name,
                 },
-                beforeSend : function () {
+                beforeSend: function () {
                     $("#chat").html("<p class=\"text-center mt-5\">Loading...</p>");
                 },
-                success: function( result ) {
+                success: function (result) {
                     $("#chat").html(result);
                 },
                 error: function (result) {

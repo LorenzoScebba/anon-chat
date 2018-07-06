@@ -10,7 +10,7 @@ include 'FirebaseController.php';
 include 'checkLoggedIn.php';
 
 $firebase = new FirebaseController();
-if(!isset($_SESSION["user"])) die();
+if (!isset($_SESSION["user"])) die();
 $user = $_SESSION["user"];
 
 $firebase->startRandomChat($user["uid"]);

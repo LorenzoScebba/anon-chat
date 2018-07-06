@@ -10,8 +10,8 @@ $user = $_SESSION["user"];
 
 $messages = ($firebase->getChat($user["uid"], $_GET["chatid"]));
 
-if($messages != null) {
+if ($messages != null) {
     echo sizeof($messages);
-}else{
+} else {
     echo 0;
 }

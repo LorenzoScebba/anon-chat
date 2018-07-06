@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>Register</title>
     <?php include 'model/css.php' ?>
     <?php include 'model/js.php' ?>
 </head>

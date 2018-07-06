@@ -10,12 +10,12 @@ include 'FirebaseController.php';
 include 'checkLoggedIn.php';
 
 $firebase = new FirebaseController();
-if(!isset($_POST["password"]) || !isset($_POST["nickname"])) die();
-if($_POST["password"] == null || $_POST["nickname"] == null) die();
-if(!isset($_SESSION["user"])) die();
+if (!isset($_POST["nickname"])) die();
+if ($_POST["nickname"] == null) die();
+if (!isset($_SESSION["user"])) die();
 $user = $_SESSION["user"];
 
-$userUpdated = $firebase->updateData($user["uid"],$_POST["nickname"],$_POST["password"]);
+$userUpdated = $firebase->updateNickname($user["uid"], $_POST["nickname"]);
 
 $_SESSION["user"] = $userUpdated->toArray();
 $_SESSION["userUpdatedData"] = true;

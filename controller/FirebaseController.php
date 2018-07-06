@@ -88,11 +88,10 @@ class FirebaseController
         return $this->auth->getUser($uid)->emailVerified;
     }
 
-    public function updateData($uid, $nickname, $password)
+    public function updateNickname($uid, $nickname)
     {
         $userProperties = [
             'displayName' => $nickname,
-            'password' => $password,
         ];
         $user = $this->auth->updateUser($uid, $userProperties);
         return $user;
@@ -108,7 +107,7 @@ class FirebaseController
 
     }
 
-    public function getChat($uid,$with)
+    public function getChat($uid, $with)
     {
         $chats = $this->database->getReference("messages/$uid/")
             ->getSnapshot()
@@ -118,7 +117,7 @@ class FirebaseController
 
     }
 
-    public function addMessage($uid,$with,$isSender,$content)
+    public function addMessage($uid, $with, $isSender, $content)
     {
         $messageId = uniqid();
 
@@ -137,12 +136,13 @@ class FirebaseController
             ]);
     }
 
-    public function startRandomChat($uid){
+    public function startRandomChat($uid)
+    {
         $users = ($this->auth->listUsers());
         $uids = array();
 
-        foreach($users as $user){
-            array_push($uids,$user->uid);
+        foreach ($users as $user) {
+            array_push($uids, $user->uid);
         }
         shuffle($uids);
 
@@ -150,15 +150,16 @@ class FirebaseController
             ->getSnapshot()
             ->getValue();
 
-        foreach($uids as $uidRecord){
-            if(!array_key_exists($uidRecord,$hasChat) && $uidRecord != $uid){
-                $this->addMessage($uid,$uidRecord,true,"Hi, i want to start a chat with you!");
+        foreach ($uids as $uidRecord) {
+            if (!array_key_exists($uidRecord, $hasChat) && $uidRecord != $uid) {
+                $this->addMessage($uid, $uidRecord, true, "Hi, i want to start a chat with you " . $this->getUser($uidRecord)->displayName . "!");
                 break;
             }
         }
     }
 
-    public function deleteMessage($uid, $with, $idMessage){
+    public function deleteMessage($uid, $with, $idMessage)
+    {
         $this->database->getReference('messages/' . "$uid/$with/" . $idMessage)
             ->remove();
 

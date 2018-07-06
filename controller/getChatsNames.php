@@ -16,11 +16,11 @@ $user = $_SESSION["user"];
 $chats = $firebase->getChats($user["uid"]);
 $uidnames = array();
 
-if($chats!=null) {
+if ($chats != null) {
     foreach ($chats as $uid => $value) {
         $uidnames[$uid] = $firebase->getUser($uid)->displayName;
     }
-    uasort($chats,function ($a,$b){
+    uasort($chats, function ($a, $b) {
         $v1 = strtotime(end($a)['datetime']['date']);
         $v2 = strtotime(end($b)['datetime']['date']);
         return $v2 - $v1;

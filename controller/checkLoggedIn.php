@@ -6,7 +6,7 @@
  * Time: 11:24
  */
 
-if(!isset($_SESSION["isLoggedIn"]) || $_SESSION["isLoggedIn"] !== true) {
+if (!isset($_SESSION["isLoggedIn"]) || $_SESSION["isLoggedIn"] !== true) {
     header("Location: " . $ini["url"] . "index.php");
     exit();
 }
