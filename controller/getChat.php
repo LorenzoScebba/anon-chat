@@ -38,7 +38,10 @@ include 'checkLoggedIn.php'; ?>
             ?>
 
             <p id="<?php echo $key ?>" <?php echo($message["isSender"] == true ? "class='text-right message'" : "class='message'") ?>><?php echo($message["content"] != null ? $message["content"] : "Error fetching content") ?>
-                <a href="#" onclick="deleteMessage('<?php echo $_GET["chatid"] ?>','<?php echo $key ?>')">X</a></p>
+                <?php if($message["isSender"] == true){ ?>
+                <a href="#" onclick="deleteMessage('<?php echo $_GET["chatid"] ?>','<?php echo $key ?>')">X</a>
+                <?php } ?>
+            </p>
         <?php } ?>
 
 
@@ -96,7 +99,7 @@ include 'checkLoggedIn.php'; ?>
                 $("#sendButton").prop('disabled', true);
             },
             success: function (result) {
-                $("#cardbody").append("<p class=\"text-right\">" + $("#sendText").val() + "<a href='#' onclick='alert('Not ready yet')'>X</a>" + "</p>");
+                $("#cardbody").append("<p class=\"text-right\">" + $("#sendText").val() + " <a href='#' onclick='alert('Not ready yet')'>X</a>" + "</p>");
                 $("#sendText").val("");
             },
             error: function (result) {
@@ -117,7 +120,12 @@ include 'checkLoggedIn.php'; ?>
                     chatid: "<?php echo($_GET["chatid"] != null ? $_GET["chatid"] : "") ?>",
                 },
                 success: function (result) {
-                    if (parseInt(result) !== parseInt($("p.message").length) && !isRefreshing && parseInt($("p.message").length) > 0) {
+                    if (parseInt(result) !== parseInt($("p.message").length) && !isRefreshing) {
+
+                        if(parseInt($("p.message").length) === 0){
+                            location.reload();
+                        }
+
                         isRefreshing = true;
                         $.ajax({
                             url: "controller/getChat.php",
@@ -136,8 +144,6 @@ include 'checkLoggedIn.php'; ?>
                                 isRefreshing = false;
                             },
                         });
-                    } else {
-                        location.reload();
                     }
                 },
                 complete: function () {
