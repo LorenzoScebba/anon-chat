@@ -13,6 +13,6 @@ $firebase = new FirebaseController();
 if (!isset($_SESSION["user"])) die();
 $user = $_SESSION["user"];
 
-$firebase->startRandomChat($user["uid"]);
-
+$return = $firebase->startRandomChat($user["uid"]);
+echo $return;
 ?>
