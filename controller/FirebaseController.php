@@ -159,8 +159,10 @@ class FirebaseController
         if($hasChat != null) {
             foreach ($uids as $uidRecord) {
                 if (!array_key_exists($uidRecord, $hasChat) && $uidRecord != $uid) {
-                    $this->addMessage($uid, $uidRecord, true, "Hi, i want to start a chat with you " . $this->getUser($uidRecord)->displayName . "!");
-                    break;
+                    if($this->getUserLastActivityInDays($uidRecord) < 3) {
+                        $this->addMessage($uid, $uidRecord, true, "Hi, i want to start a chat with you " . $this->getUser($uidRecord)->displayName . "!");
+                        break;
+                    }
                 }
             }
         }else{
@@ -171,6 +173,7 @@ class FirebaseController
                 }
             }
         }
+        return 1;
     }
 
     public function deleteMessage($uid, $with, $idMessage)
