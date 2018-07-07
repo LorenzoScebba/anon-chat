@@ -12,9 +12,13 @@ if (file_exists('../vendor/autoload.php'))
 else
     include 'vendor/autoload.php';
 
-define("PATHINIFILE", "C:\\xampp\\cgi-bin\\");
+
 define("INIFILENAME", "anon-config.ini");
 
 
-$ini = parse_ini_file(PATHINIFILE . INIFILENAME);
+if(file_exists("C:\\xampp\\cgi-bin\\" . INIFILENAME))
+    $ini = parse_ini_file("C:\\xampp\\cgi-bin\\" . INIFILENAME);
+else
+    $ini = parse_ini_file("/var/www/cgi-bin/" . INIFILENAME);
+
 session_start();

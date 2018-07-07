@@ -10,7 +10,6 @@ include_once 'config.php';
 
 use Kreait\Firebase\Factory;
 use Kreait\Firebase\ServiceAccount;
-use Google\Cloud\Firestore\FirestoreClient;
 
 class FirebaseController
 {
@@ -22,8 +21,15 @@ class FirebaseController
      */
     public function __construct()
     {
-        $ini = parse_ini_file(PATHINIFILE . INIFILENAME);
-        $serviceAccount = ServiceAccount::fromJsonFile(PATHINIFILE . $ini["firebase-service-account-file"]);
+        if(file_exists("C:\\xampp\\cgi-bin\\" . INIFILENAME)) {
+            $ini = parse_ini_file("C:\\xampp\\cgi-bin\\" . INIFILENAME);
+            $path = "C:\\xampp\\cgi-bin\\";
+        }
+        else {
+            $ini = parse_ini_file("/var/www/cgi-bin/" . INIFILENAME);
+            $path = "/var/www/cgi-bin/";
+        }
+        $serviceAccount = ServiceAccount::fromJsonFile($path . $ini["firebase-service-account-file"]);
         $firebase = (new Factory)
             ->withServiceAccount($serviceAccount)
             ->create();
@@ -150,10 +156,19 @@ class FirebaseController
             ->getSnapshot()
             ->getValue();
 
-        foreach ($uids as $uidRecord) {
-            if (!array_key_exists($uidRecord, $hasChat) && $uidRecord != $uid) {
-                $this->addMessage($uid, $uidRecord, true, "Hi, i want to start a chat with you " . $this->getUser($uidRecord)->displayName . "!");
-                break;
+        if($hasChat != null) {
+            foreach ($uids as $uidRecord) {
+                if (!array_key_exists($uidRecord, $hasChat) && $uidRecord != $uid) {
+                    $this->addMessage($uid, $uidRecord, true, "Hi, i want to start a chat with you " . $this->getUser($uidRecord)->displayName . "!");
+                    break;
+                }
+            }
+        }else{
+            foreach ($uids as $uidRecord) {
+                if ($uidRecord != $uid) {
+                    $this->addMessage($uid, $uidRecord, true, "Hi, i want to start a chat with you " . $this->getUser($uidRecord)->displayName . "!");
+                    break;
+                }
             }
         }
     }
