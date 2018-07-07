@@ -50,10 +50,18 @@
                     .text("Starting a random chat...");
             },
             success: function (result) {
-                location.reload()
+                if(!$.trim(result)){
+                    $("#startChat")
+                        .prop("disabled", false)
+                        .text("Start a random chat!");
+                    alert("No users found to start a chat with :(");
+                }else {
+                    location.reload();
+                }
             },
             error: function (result) {
-                alert("Failed to start another chat");
+                console.log(result);
+                alert("Something went wrong :(");
             }
         });
     }
