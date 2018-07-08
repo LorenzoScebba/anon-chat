@@ -4,6 +4,10 @@
 
 Demo : http://scaleway.scebba.info/anon/index.php
 
+![](https://github.com/LorenzoScebba/anon-chat/blob/master/img/homepage.png?raw=true)
+
+---
+
 ### Directory Structure
 ```
 "C:\xampp\" OR "/var/www/"
