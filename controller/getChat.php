@@ -7,54 +7,12 @@ include 'checkLoggedIn.php'; ?>
             id="name"><?php echo($_GET["name"] != null ? $_GET["name"] : "<s>Error fetching name</s>") ?></span></h4>
 <div class="card">
     <div class="card-body" id="cardbody">
-
-        <?php
-
-        $firebase = new FirebaseController();
-        if (!isset($_SESSION["user"])) die();
-        if (!isset($_GET["chatid"])) die();
-        $user = $_SESSION["user"];
-
-        $messages = ($firebase->getChat($user["uid"], $_GET["chatid"]));
-        if ($messages != null) {
-            uasort($messages, function ($message1, $message2) {
-
-                $message1d = new DateTime($message1['datetime']['date']);
-                $message2d = new DateTime($message2['datetime']['date']);
-
-                if ($message1d == $message2d) {
-                    return 0;
-                }
-
-                return $message1d < $message2d ? -1 : 1;
-            });
-        } else {
-            echo "<script>location.reload()</script>";
-            exit;
-        }
-
-
-        foreach ($messages as $key => $message) {
-            ?>
-
-            <p id="<?php echo $key ?>" <?php echo($message["isSender"] == true ? "class='text-right message'" : "class='message'") ?>><?php echo($message["content"] != null ? $message["content"] : "Error fetching content") ?>
-                <?php if($message["isSender"] == true){ ?>
-                <a href="#" onclick="deleteMessage('<?php echo $_GET["chatid"] ?>','<?php echo $key ?>')">X</a>
-                <?php } ?>
-            </p>
-        <?php } ?>
-
-
+        <?php include 'getChatMessages.php' ?>
     </div>
 
     <div class="row">
-        <div class="col-9 my-2 mx-2"><input type="text" class="form-control" id="sendText"
-                                            onkeydown="handleKeyPress(event)" required></div>
-        <div class="col-2 my-2 mx-2">
-            <button id="sendButton" class="btn btn-success" style="width: 100%;" onclick="sendMessage()">Send</button>
-        </div>
+        <?php include 'getChatButtons.php' ?>
     </div>
-
 </div>
 
 <script>
@@ -107,6 +65,7 @@ include 'checkLoggedIn.php'; ?>
             },
             complete: function () {
                 $("#sendButton").prop('disabled', false);
+                $("#sendText").focus();
             }
         });
     }
@@ -128,13 +87,13 @@ include 'checkLoggedIn.php'; ?>
 
                         isRefreshing = true;
                         $.ajax({
-                            url: "controller/getChat.php",
+                            url: "controller/getChatMessages.php",
                             data: {
                                 chatid: "<?php echo $_GET["chatid"] ?>",
                                 name: $("#name").html(),
                             },
                             success: function (result) {
-                                $("#chat").html(result);
+                                $("#cardbody").html(result);
 
                             },
                             error: function (result) {
